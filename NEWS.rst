@@ -1,5 +1,5 @@
-mir.protology Release Notes
-===========================
+mir.sqlite3m Release Notes
+==========================
 
 This project uses `semantic versioning <http://semver.org/>`_.
 
