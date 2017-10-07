@@ -1,17 +1,17 @@
-mir.protology README
+mir.sqlite3m README
 ====================
 
-.. image:: https://circleci.com/gh/darkfeline/mir.protology.svg?style=shield
-   :target: https://circleci.com/gh/darkfeline/mir.protology
+.. image:: https://circleci.com/gh/darkfeline/mir.sqlite3m.svg?style=shield
+   :target: https://circleci.com/gh/darkfeline/mir.sqlite3m
    :alt: CircleCI
-.. image:: https://codecov.io/gh/darkfeline/mir.protology/branch/master/graph/badge.svg
-   :target: https://codecov.io/gh/darkfeline/mir.protology
+.. image:: https://codecov.io/gh/darkfeline/mir.sqlite3m/branch/master/graph/badge.svg
+   :target: https://codecov.io/gh/darkfeline/mir.sqlite3m
    :alt: Codecov
-.. image:: https://badge.fury.io/py/mir.protology.svg
-   :target: https://badge.fury.io/py/mir.protology
+.. image:: https://badge.fury.io/py/mir.sqlite3m.svg
+   :target: https://badge.fury.io/py/mir.sqlite3m
    :alt: PyPI Release
-.. image:: https://readthedocs.org/projects/mir-protology/badge/?version=latest
-   :target: http://mir-protology.readthedocs.io/en/latest/
+.. image:: https://readthedocs.org/projects/mir-sqlite3m/badge/?version=latest
+   :target: http://mir-sqlite3m.readthedocs.io/en/latest/
    :alt: Latest Documentation
 
-Template project for Python projects under the mir namespace.
+Simple sqlite3 migration management.

@@ -27,12 +27,12 @@ def find_version(path):
 
 
 setup(
-    name='mir.protology',
-    version=find_version('mir/protology/__init__.py'),
-    description='Distribution template for the mir namespace',
+    name='mir.sqlite3m',
+    version=find_version('mir/sqlite3m/__init__.py'),
+    description='Simple sqlite3 migration management',
     long_description='',
     keywords='',
-    url='https://github.com/darkfeline/mir.protology',
+    url='https://github.com/darkfeline/mir.sqlite3m',
     author='Allen Li',
     author_email='darkfeline@felesatra.moe',
     classifiers=[
@@ -43,6 +43,6 @@ setup(
         'Programming Language :: Python :: 3.6',
     ],
 
-    packages=['mir.protology'],
+    packages=['mir.sqlite3m'],
     install_requires=[],
 )

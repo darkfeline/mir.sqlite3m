@@ -12,8 +12,8 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-from mir import protology
+from mir import sqlite3m
 
 
 def test_quack():
-    assert protology.quack() == 'quack'
+    assert sqlite3m.quack() == 'quack'

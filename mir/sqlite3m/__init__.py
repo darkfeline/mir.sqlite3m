@@ -13,8 +13,3 @@
 # limitations under the License.
 
 __version__ = '0.1.0'
-
-
-def quack():
-    """Quack like a duck."""
-    return 'quack'
