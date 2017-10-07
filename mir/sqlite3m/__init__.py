@@ -12,6 +12,16 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
+"""sqlite3m implements a simple SQLite database migration manager.
+
+sqlite3m works with any DB-API 2.0 compliant SQLite library, using the
+standard library sqlite3 as a reference.
+
+Migration functions are registered with a MigrationManager, which can
+then be used to migrate any DB-API 2.0 connection to a SQLite database.
+The version of the database is tracked using SQLite user_version.
+"""
+
 __version__ = '0.1.0'
 
 import contextlib
@@ -23,7 +33,9 @@ logger = logging.getLogger(__name__)
 
 class MigrationManager:
 
-    """Simple database migration manager"""
+    """Simple SQLite migration manager.
+
+    """
 
     def __init__(self, initial_ver=0):
         self._migrations = {}
@@ -131,6 +143,11 @@ class ForeignKeyError(MigrationError):
 
 @contextlib.contextmanager
 def CheckForeignKeysWrapper(conn):
+    """Migration wrapper that checks foreign keys.
+
+    Note that this may raise different exceptions depending on the
+    underlying database API.
+    """
     yield
     cur = conn.cursor()
     cur.execute('PRAGMA foreign_key_check')
