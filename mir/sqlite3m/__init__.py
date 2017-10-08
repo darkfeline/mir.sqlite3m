@@ -12,7 +12,7 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-"""sqlite3m implements a simple SQLite database migration manager.
+"""Simple monotonic SQLite database migration manager
 
 sqlite3m works with any DB-API 2.0 compliant SQLite library, using the
 standard library sqlite3 as a reference.
@@ -20,9 +20,17 @@ standard library sqlite3 as a reference.
 Migration functions are registered with a MigrationManager, which can
 then be used to migrate any DB-API 2.0 connection to a SQLite database.
 The version of the database is tracked using SQLite user_version.
+
+>>> import sqlite3
+>>> manager = MigrationManager()
+>>> @manager.migration(0, 1)
+... def create_table(conn):
+...     conn.execute('CREATE TABLE foo ( bar )')
+>>> conn = sqlite3.connect(':memory:')
+>>> manager.migrate(conn)
 """
 
-__version__ = '0.1.0'
+__version__ = '1.0.0'
 
 import contextlib
 import logging
@@ -33,9 +41,7 @@ logger = logging.getLogger(__name__)
 
 class MigrationManager:
 
-    """Simple SQLite migration manager.
-
-    """
+    """Simple monotonic SQLite migration manager."""
 
     def __init__(self, initial_ver=0):
         self._migrations = {}
@@ -83,7 +89,8 @@ class MigrationManager:
         """Migrate a database as needed.
 
         This method is safe to call on an up-to-date database, on an old
-        database, or an uninitialized database (version 0).
+        database, on a newer database, or an uninitialized database
+        (version 0).
 
         This method is idempotent.
         """
@@ -116,6 +123,7 @@ class MigrationManager:
 
 
 class Migration(NamedTuple):
+    """Migration describes one migration operation."""
     from_ver: int
     to_ver: int
     func: 'Callable[[Connection], Any]'
