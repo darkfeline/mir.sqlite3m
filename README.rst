@@ -15,3 +15,7 @@ mir.sqlite3m README
    :alt: Latest Documentation
 
 Simple sqlite3 migration management.
+
+To view API documentation, run::
+
+  $ pipenv run pydoc mir.sqlite3m

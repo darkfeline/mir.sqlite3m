@@ -3,7 +3,6 @@ url = "https://pypi.python.org/simple"
 verify_ssl = true
 
 [dev-packages]
-"e1839a8" = {path = ".", editable = true}
 pytest = "~=3.2"
 "pytest-catchlog" = "~=1.2"
 "pytest-cov" = "~=2.5"
