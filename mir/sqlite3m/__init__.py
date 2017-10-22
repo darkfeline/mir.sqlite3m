@@ -81,8 +81,12 @@ class MigrationManager:
             return func
         return decorator
 
-    def register_wrapper(self, wrapper: 'Callable[[Connection], Any]'):
-        """Register a wrapper."""
+    def register_wrapper(self, wrapper):
+        """Register a wrapper.
+
+        Wrapper is a callable that takes a Connection and returns a
+        context manager.
+        """
         self._wrappers.append(wrapper)
 
     def migrate(self, conn):
