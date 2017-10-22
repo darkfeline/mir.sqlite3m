@@ -30,7 +30,7 @@ The version of the database is tracked using SQLite user_version.
 >>> manager.migrate(conn)
 """
 
-__version__ = '1.0.0'
+__version__ = '1.0.1'
 
 import contextlib
 import logging
